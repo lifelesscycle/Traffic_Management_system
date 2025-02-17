@@ -136,7 +136,7 @@ def process_junction_traffic(input_csv, output_csv, api_key):
 
 def main():
     # Your Google Maps API key
-    api_key = 'AIzaSyADBKX48xzDBlvFbImdpfjG4_hL-gZ2GpU'
+    api_key = 'Your Google Maps API key'
     
     # Input and output CSV files
     input_csv = 'junction_input.csv'  # Contains 'origin_N', 'origin_S', 'origin_E', 'origin_W', 'destination'
