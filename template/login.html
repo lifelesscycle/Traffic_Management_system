@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Management Systems - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Log in</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="username">User Name</label>
+          <input type="text" id="username" placeholder="Enter your username" style="border-radius: 20px;" required>
+          <div class="error-message" id="username-error"></div>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" style="border-radius: 20px;" required>
+          <div class="error-message" id="password-error"></div>
+        </div>
+        <button type="submit" class="submit-btn" style="border-radius: 20px;">Submit</button>
+      </form>
+     </div>
+    </div>
+   <div class="video-background">
+    <video autoplay loop muted plays-inline>
+      <source src="{{ url_for('static',filename='video/background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <script src="{{ url_for('static',filename='js/login.js') }}"></script>
+</body>
+</html>
