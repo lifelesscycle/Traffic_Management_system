@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+   <header>
+     <nav>
+      <ul>
+        <li><a href="{{ url_for('dashboard') }}">Smart Traffic Management Systems</a></li>
+        <li><a href="{{ url_for('traffic_prediction') }}">Traffic Prediction</a></li>
+        <li><a href="{{ url_for('add_location') }}">Add Location</a></li>
+        <li><a href="{{ url_for('emergency') }}">Emergency</a></li>
+        <li><a href="{{ url_for('route_optimizer') }}">Route Optimizer</a></li>
+      </ul>
+     </nav>
+    </header>
+ <section class="flex">
+   <a>Dashboard</a>
+   <div class="dashboard">
+    <!-- First Column -->
+    <div class="column1">
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="chart-wrapper">
+                    <canvas id="designChart"></canvas>
+                    <div class="metric-value">74%</div>
+                </div>
+                <div class="metric-label">Design</div>
+            </div>
+            <div class="metric">
+                <div class="chart-wrapper">
+                    <canvas id="frontendChart"></canvas>
+                    <div class="metric-value">48%</div>
+                </div>
+                <div class="metric-label">Front-end</div>
+            </div>
+            <div class="metric">
+                <div class="chart-wrapper">
+                    <canvas id="backendChart"></canvas>
+                    <div class="metric-value">62%</div>
+                </div>
+                <div class="metric-label">Back-end</div>
+            </div>
+            <div class="metric">
+                <div class="chart-wrapper">
+                    <canvas id="testingChart"></canvas>
+                    <div class="metric-value">85%</div>
+                </div>
+                <div class="metric-label">Testing</div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Rest of the columns remain the same -->
+    <div class="column2">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">23.5h
+                    <span class="trend-indicator trend-up">↑4%</span>
+                </div>
+                <div class="stat-label">Design</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">38h
+                    <span class="trend-indicator trend-up">↑7%</span>
+                </div>
+                <div class="stat-label">Front-end</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">45.5h
+                    <span class="trend-indicator trend-up">↑2%</span>
+                </div>
+                <div class="stat-label">Back-end</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">107h
+                    <span class="trend-indicator trend-down">↓1%</span>
+                </div>
+                <div class="stat-label">Total hours</div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+
+    <div class="column">
+        <h3>Team</h3>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="/api/placeholder/40/40" alt="Team member 1">
+                <span>Aarya Nema</span>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/40/40" alt="Team member 2">
+                <span>Jay Jeswani</span>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/40/40" alt="Team member 3">
+                <span>Gaurav Jain</span>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/40/40" alt="Team member 4">
+                <span>Rashi Sahu</span>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/40/40" alt="Team member 5">
+                <span>K Mohit</span>
+            </div>
+       </div>
+     </div>
+   </div>
+ </section>  
+ 
+ <footer>
+  <p>&copy; Group 83</p>
+ </footer>
+
+  <div class="video-background">
+    <video autoplay loop muted plays-inline>
+      <source src="{{ url_for('static', filename='video/background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>  
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
