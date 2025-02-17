@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Emergencies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/display_emergency_list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/transition.css')}}">
+</head>
+<body>
+ <div id="loading-overlay">
+    <div class="loading-spinner"></div>
+ </div>
+
+ <div id="content" class="page-transition">
+    <header>
+        <nav>
+         <ul>
+           <li><a href="{{ url_for('dashboard') }}">Smart Traffic Management Systems</a></li>
+           <li><a href="{{ url_for('traffic_prediction') }}">Traffic Prediction</a></li>
+           <li><a href="{{ url_for('add_location') }}">Add Location</a></li>
+           <li><a href="{{ url_for('emergency') }}">Emergency</a></li>
+           <li><a href="{{ url_for('route_optimizer') }}">Route Optimizer</a></li>
+         </ul>
+        </nav>
+    </header>
+
+    <div class="emergency-container">
+        <h1>Traffic Emergencies</h1>
+        
+        <!-- Search Input -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Emergencies...">
+        </div>
+
+        <!-- Emergency Table -->
+        <table class="emergency-table" id="emergencyTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID <span class="sort-btn">↕</span></th>
+                    <th onclick="sortTable(1)">Emergency <span class="sort-btn">↕</span></th>
+                    <th onclick="sortTable(2)">Location <span class="sort-btn">↕</span></th>
+                    <th onclick="sortTable(3)">City <span class="sort-btn">↕</span></th>
+                    <th onclick="sortTable(4)">State <span class="sort-btn">↕</span></th>
+                    <th onclick="sortTable(5)">Message <span class="sort-btn">↕</span></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Table rows will be populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; Group 83</p>
+    </footer>
+
+    <div class="video-background">
+        <video autoplay loop muted plays-inline>
+          <source src="{{ url_for('static',filename='video/background.mp4') }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+ </div>
+
+    <script src="{{ url_for('static', filename='js/display_emergency_list.js') }}"></script>
+    <script src="{{url_for('static',filename='js/transition.js')}}" ></script>
+    <script>
+        // Pass predictions from Flask to JavaScript
+        const emergencies = JSON.parse('{{ emergencies | tojson | safe }}');
+        initializePage(emergencies);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Emergency</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/emergency.css') }}">
+</head>
+<body>
+   <header>
+     <nav>
+      <ul>
+        <li><a href="{{ url_for('dashboard') }}">Smart Traffic Management Systems</a></li>
+        <li><a href="{{ url_for('traffic_prediction') }}">Traffic Prediction</a></li>
+        <li><a href="{{ url_for('add_location') }}">Add Location</a></li>
+        <li><a href="{{ url_for('emergency') }}">Emergency</a></li>
+        <li><a href="{{ url_for('route_optimizer') }}">Route Optimizer</a></li>
+      </ul>
+     </nav>
+    </header>
+ <section class="flex">
+  <div class="container">
+    <h1>Report Emergency</h1>
+    <form id="traffic-prediction-form">
+      <div class="form-group">
+        <label for="emergency">Emergency *</label>
+        <input type="text" id="emergency" name="emergency" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State *</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Type your message here...</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <div class="variousButton">
+        <button style="margin-right: 16px;" type="submit">Submit</button>
+        <button style="margin-left: 16px;" class="showButton">Show list</button>
+      </div>
+    </form>
+    <div id="result-container" class="hidden">
+      <h2>Result</h2>
+      <p id="result-message"></p>
+      <button id="add-emergency">Add Emergency</button>
+    </div>
+  </div>
+ </section>
+ <footer>
+  <p>&copy; Group 83</p>
+ </footer>
+  <div class="video-background">
+    <video autoplay loop muted plays-inline>
+      <source src="{{ url_for('static',filename='video/background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  <script src="{{ url_for('static',filename='js/emergency.js') }}"></script>
+</body>
+</html>

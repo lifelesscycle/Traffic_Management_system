@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Traffic Management Systems</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+	<li><a href="#"><img src="{{ url_for('static',filename='icons/displaymainicon.png') }}" alt = "Logo" class="nav_icon"></a></li>
+	<li><a href="#">Smart Traffic Management </a></li>
+        <li class="nav_right"><a href="{{ url_for('login') }}">Log in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h1>Smart Traffic Management Systems</h1>
+      <p>Making Traversing Easy!</p>
+      <button class="explore-btn" style="border-radius: 20px;">Log in</button>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <img src="{{ url_for('static',filename='images/traffic-light.png') }}" alt="Smart Traffic Systems">
+        <h3 class="feature-title">Traffic Management</h3>
+        <p class="feature-description">Real time traffic control and monitor system.</p>
+      </div>
+      <div class="feature">
+        <img src="{{ url_for('static',filename='images/route.png') }}" alt="Routes">
+        <h3 class="feature-title">Route Optimizer</h3>
+        <p class="feature-description">Route optimization for reduced travel time.</p>
+      </div>
+      <div class="feature">
+        <img src="{{ url_for('static',filename='images/emergency.png') }}" alt="Emergency">
+        <h3 class="feature-title">Emergency Management</h3>
+        <p class="feature-description">Report emergencies in real time.</p>
+      </div>
+      <div class="feature">
+        <img src="{{ url_for('static',filename='images/location.png') }}" alt="Locations">
+        <h3 class="feature-title">Dynamic Location Management</h3>
+        <p class="feature-description">User interactice location management system.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; GROUP 83 </p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

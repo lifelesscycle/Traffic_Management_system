@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Prediction Location Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/traffic_prediction.css') }}">
+</head>
+<body>
+
+ <header>
+     <nav>
+       <ul>
+         <li><a href="{{ url_for('dashboard') }}">Smart Traffic Management Systems</a></li>
+         <li><a href="{{ url_for('traffic_prediction') }}">Traffic Prediction</a></li>
+         <li><a href="{{ url_for('add_location') }}">Add Location</a></li>
+         <li><a href="{{ url_for('emergency') }}">Emergency</a></li>
+         <li><a href="{{ url_for('route_optimizer') }}">Route Optimizer</a></li>
+       </ul>
+     </nav>
+   </header>
+
+    <div class="container">
+        <div class="form-section">
+            <h1>Traffic Prediction</h1>
+            
+            <div class="input-group">
+                <label for="locationInput">Location</label>
+                <input 
+                    type="text" 
+                    id="locationInput" 
+                    placeholder="Enter a location"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="durationInput">Duration (minutes)</label>
+                <input 
+                    type="number" 
+                    id="durationInput" 
+                    placeholder="Enter duration"
+                    min="1"
+                >
+            </div>
+
+            <button id="findLocation">Predict Traffic</button>
+
+            <div id="locationInfo">
+                <h3 class="section-title">Location Details</h3>
+                <p id="coordinates">Location details will appear here</p>
+            </div>
+
+            <div id="placeDetails">
+                <h3 class="section-title">Place Information</h3>
+                <!-- Place details will be displayed here -->
+            </div>
+        </div>
+
+        <div class="map-section">
+            <div id="map"></div>
+
+            <div id="trafficResults">
+                <h3 class="section-title">Traffic Prediction Results</h3>
+                <!-- Traffic prediction results will be displayed here -->
+            </div>
+	    <button id="resetButton">Reset</button>
+        </div>
+    </div>
+
+ <footer>
+   <p>&copy; Group 83</p>
+ </footer>
+
+   <div class="video-background">
+    <video autoplay loop muted>
+      <source src="{{ url_for('static',filename='video/background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADBKX48xzDBlvFbImdpfjG4_hL-gZ2GpU&libraries=places"></script>
+    <script src="{{ url_for('static',filename='js/traffic_prediction.js') }}"></script>
+</body>
+</html>

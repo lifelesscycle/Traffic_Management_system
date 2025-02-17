@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Traffic Management Systems</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/add_location.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('dashboard') }}">Smart Traffic Management Systems</a></li>
+        <li><a href="{{ url_for('traffic_prediction') }}">Traffic Prediction</a></li>
+        <li><a href="{{ url_for('add_location') }}">Add Location</a></li>
+        <li><a href="{{ url_for('emergency') }}">Emergency</a></li>
+        <li><a href="{{ url_for('route_optimizer') }}">Route Optimizer</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main>
+   <section class="flex">
+    <section class="form-section">
+      <h2>Add Location</h2>
+      <form id="add-location-form">
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+          <label for="locations">Locations (comma-separated):</label>
+          <input type="text" id="locations" name="locations" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+     </section>
+    <section class="result-section">
+      <h2>Result</h2>
+      <div id="result-container"></div>
+    </section>
+   </section>
+
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Group 83</p>
+  </footer>
+   <div class="video-background">
+    <video autoplay loop muted>
+      <source src="{{ url_for('static',filename='video/background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADBKX48xzDBlvFbImdpfjG4_hL-gZ2GpU"></script>
+  <script src="{{ url_for('static',filename='js/add_location.js') }}"></script>
+</body>
+</html>
